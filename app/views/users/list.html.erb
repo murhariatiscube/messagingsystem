@@ -1,0 +1,45 @@
+	<% @page_title="user list" %>
+	<div class ="user list">
+  <h2> Users </h2>
+  <p>
+    <%= link_to(" Back To Menu", {:action => 'menu'}, :class =>'btn btn-warning') %></p>
+	<p><%= link_to(" Add new User", {:action => 'new'}, :class =>'btn btn-warning') %></p>
+	
+	&nbsp;
+    <table class"table" summary="User list" border=1>
+           <tr class ="header">
+        	
+	  		
+		  	<th>Name</th>
+	  		<th>E-mail</th>
+	  		<th>NickName</th>
+	  		<th>External Ref</th>
+	  		<th>Status</th>
+	
+	        <th> &nbsp; </th>
+          </tr>
+          
+	  <% @users.each do |user| %>
+	  
+	  <tr class="<%=cycle('odd','even') %>">
+		<td><%= user.name %></td>
+		
+		<td><%= mail_to(user.email) %></td>
+		<td><%= user.nickname %></td>
+		<td><%= user.external_ref %></td>
+		
+		 <%if user.status == 0 %>
+	  	    <td><%="False"%></td>
+	  	    <%else%>
+	  	    <td><%="True"%></td>
+	  	    <%end%>
+	
+		<td class="action">
+			<%= link_to("show",{:action => 'show', :id =>user.id}, :class =>'btn btn-warning')%>
+			<%= link_to("Edit",{:action => 'edit', :id =>user.id}, :class =>'btn btn-warning')%>
+			<%= link_to("Delete",{:action => 'delete', :id =>user.id}, :class =>'btn btn-warning',:confirm => 'Are you sure you want to remove this User?', :method => :post)%>
+		</td>
+	</tr>
+	<% end %>
+    	</table>
+			</div>

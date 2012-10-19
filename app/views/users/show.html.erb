@@ -1,0 +1,40 @@
+
+
+<%= link_to(" Back to List", {:action => 'list'},:class =>'btn btn-warning') %>
+
+<div class ="user show">
+	<h2>Show User</h2>
+	
+	<table summary="User detail view">
+		<tr>
+			<th>Name</th>
+			<td><%= @user.name %></td>
+		</tr>
+		
+		<tr>
+			<th>email</th>
+			<td><%= @user.email %></td>
+		</tr>
+		<tr>
+			<th>NickName</th>
+			<td><%= @user.nickname %></td>
+		</tr>
+		
+		<tr>
+			<th>External Referance</th>
+			<td><%= @user.external_ref %></td>
+		</tr>
+		<tr>
+			<th>status</th>
+			<td><%= @user.status %></td>
+		</tr>
+		<tr>
+			<th>Created</th>
+			<td><%= @user.created_at %></td>
+		</tr>
+		<tr>
+			<th>Updated</th>
+			<td><%= @user.updated_at %></td>
+		</tr>
+	</table>
+</div>

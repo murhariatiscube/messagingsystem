@@ -1,0 +1,40 @@
+
+
+<%= link_to(" Back to List", {:action => 'list'}, :class =>'btn btn-warning') %>
+
+<div class ="messagetemplate show">
+	<h2>Show MessageTemplate</h2>
+	
+	<table summary="messagetemplate detail view">
+		<tr>
+			<th>Name</th>
+			<td><%= @messagetemplate.name %></td>
+		</tr>
+		
+		<tr>
+			<th>Data</th>
+			<td><%= @messagetemplate.data %></td>
+		</tr>
+		<tr>
+			<th>Active Form</th>
+			<td><%= @messagetemplate.active_form %></td>
+		</tr>
+		<tr>
+			<th>Active Until</th>
+			<td><%= @messagetemplate.active_until %></td>
+		</tr>
+		
+		<tr>
+			<th>status</th>
+			<td><%= @messagetemplate.status %></td>
+		</tr>
+		<tr>
+			<th>Created</th>
+			<td><%= @messagetemplate.created_at %></td>
+		</tr>
+		<tr>
+			<th>Updated</th>
+			<td><%= @messagetemplate.updated_at %></td>
+		</tr>
+	</table>
+</div>

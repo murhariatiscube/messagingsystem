@@ -1,0 +1,42 @@
+	<% @page_title="MessageTemplate list" %>
+	<div class ="MessageTemplate list">
+  <h2> MessageTemplate </h2>
+    <p><%= link_to(" Back To Menu", {:controller=>'users',:action => 'menu'}, :class =>'btn btn-warning') %></p>
+	<p><%= link_to(" Add new MessageTemplate", {:action => 'new'}, :class =>'btn btn-warning') %></p>
+    <table class"listing" summary="MessageTemplate list" border=1>
+           <tr class ="header">
+        	
+	  		
+		  	<th>Name</th>
+	  		<th>Data</th>
+	  		<th>Active From</th>
+	  		<th>Active Until</th>
+	  		<th>Status</th>
+	
+	        <th> &nbsp; </th>
+          </tr>
+          
+	  <% @messagetemplates.each do |messagetemplate| %>
+	  
+	  <tr class="<%=cycle('odd','even') %>">
+		<td><%= messagetemplate.name %></td>
+		<td><%= messagetemplate.data %></td>
+		<td><%= messagetemplate.active_form %></td>
+		<td><%= messagetemplate.active_until %></td>
+		
+		
+		 <%if messagetemplate.status == 0 %>
+	  	    <td><%="False"%></td>
+	  	    <%else%>
+	  	    <td><%="True"%></td>
+	  	    <%end%>
+	
+		<td class="action">
+			<%= link_to("show",{:action => 'show', :id =>messagetemplate.id}, :class =>'btn btn-warning')%>
+			<%= link_to("Edit",{:action => 'edit', :id =>messagetemplate.id}, :class =>'btn btn-warning')%>
+			<%= link_to("Delete",{:action => 'delete', :id =>messagetemplate.id}, :class =>'btn btn-warning',:confirm => 'Are you sure you want to remove this Message Templete?', :method => :post)%>
+		</td>
+	</tr>
+	<% end %>
+    	</table>
+			</div>

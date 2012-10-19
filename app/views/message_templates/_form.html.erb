@@ -1,0 +1,41 @@
+ <%= error_messages_for(@messagetemplate)%>
+ <table summary="MessageTemplate form fields">
+		
+		
+		<tr>
+			 <th>Name</th>
+			<td><%= f.text_field(:name, :id => "name") %> <span> Enter the Name</span></td>
+		
+		</tr>
+		
+		
+		<tr>
+			<th>Data</th>	
+			<td><%= f.text_area(:data, :cols => 10, :rows => 5, :style => "font-size: 1.1em;",:id => "data") %><span> enter data </span></td>		
+		</tr>		
+		
+		<tr>
+			 <th>Active From</th>
+		
+			<%#= date_select(:active_form, :order => [:year,:month, :day]) %>
+			<td><%= f.date_select(:active_form,:start_year => 1940)%></td>
+				</tr>  
+		</tr>
+		
+		<tr>
+			 <th>Active Until</th>
+			<td><%= f.date_select(:active_until,:start_year => 1940)%></td>
+			<%#= f.calendar_date_select "active_until" %>
+		</tr>
+						
+		<tr>
+			 <th>Status-Active?</th>
+			
+			<td><%= f.radio_button(:status,'true') %> Yes
+				<%= f.radio_button(:status,'false') %> No
+			</td>
+					
+		</tr>
+					
+								
+	</table>

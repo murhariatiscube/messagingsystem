@@ -1,0 +1,32 @@
+
+
+<%= link_to(" Back to List", {:action => 'list'}, :class =>'btn btn-warning') %>
+
+<div class ="message show">
+	<h2>Show MessageTemplate</h2>
+	
+	<table summary="message detail view">
+		
+		
+		<tr>
+			<th>User</th>
+			<td><%= @message.user_id %></td>
+		</tr>
+		<tr>
+			<th>Message</th>
+			<td><%= @message.message_template_id %></td>
+		</tr>
+		<tr>
+			<th>Response</th>
+			<td><%= @message.response %></td>
+		</tr>
+		<tr>
+			<th>Created</th>
+			<td><%= @message.created_at %></td>
+		</tr>
+		<tr>
+			<th>Updated</th>
+			<td><%= @message.updated_at %></td>
+		</tr>
+	</table>
+</div>

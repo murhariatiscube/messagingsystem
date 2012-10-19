@@ -1,0 +1,23 @@
+ <%= error_messages_for(@message)%>
+ <table summary="MessageTemplate form fields">
+		
+		
+		<tr>
+			 <th>User Name</th>
+			
+			<td><%= f.select(:user_id,@user.collect{|s|[s.name,s.id]}) %></td>
+		
+		</tr>
+		
+		
+		<tr>
+			<th>Message</th>	
+			<td><%= f.select(:message_template_id,@messagetemplate.collect{|s|[s.name,s.id]}) %></td>
+		</tr>		
+		
+			
+		<tr>
+			<th>Response</th>	
+			<th><%= f.text_field(:response,:id=>'rr') %></th>
+		</tr>							
+	</table>

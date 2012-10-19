@@ -1,0 +1,47 @@
+<% #@page_title="login" %>
+
+<div id="left">
+     <!--<p> Welcome to Message System...</p>-->
+</div>
+
+<div id="right">
+<div class="login">
+<h2 style="text-align:center;">Login</h2>
+<%= form_for(:user, :url =>{:action => 'send_login'}) do |f| %>
+
+	<table>
+	
+	<tr>
+	
+      <th><%= label_tag(:name) %></th> 
+      <td><%= text_field_tag(:name) %></td>
+    </tr>
+	<tr>
+	 <td><br/></td>
+     <td><br/></td>
+	</tr>
+	<tr>
+      <td><%= label_tag(:password) %></td>
+      <td><%= password_field_tag(:password) %></td>
+    </tr>
+	
+	<tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag("Log In",:class =>'btn btn-warning') %></td>
+    </tr>
+	
+	</table>
+	<br/>
+	<br/>
+	<p><span class="label label-warning" style="text-align:center;"><%= link_to("New User ? Click Here...", {:controller => 'users' ,:action => 'new'}) %></span></p> 
+
+	<%end %>
+   </div>
+</div>
+	
+
+
+
+
+
+

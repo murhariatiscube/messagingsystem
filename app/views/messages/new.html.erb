@@ -1,0 +1,15 @@
+<% @page_title= "create messagee" %>
+<%= link_to("<< Back to List", {:action => 'list'}, :class =>'btn btn-warning') %>
+<div class ="Message new">
+	<h2>Create Message</h2>
+	
+	<%= form_for(:message, :url =>{:action => 'create'}) do |f| %>
+	
+	 <%= render(:partial=> "form", :locals=>{:f => f}) %>
+	
+	<div class="form-buttons">
+		<%= submit_tag("Create Message", :class =>'btn btn-warning') %> 
+</div>
+
+<% end %>
+</div>

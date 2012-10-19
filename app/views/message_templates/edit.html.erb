@@ -1,0 +1,15 @@
+
+<%= link_to(" Back to List", {:action => 'list'}, :class =>'btn btn-warning') %>
+<div class ="messagetemplate edit">
+	<h2>Update MessageTemplate</h2>
+	
+	<%= form_for(:messagetemplate, :url =>{:action => 'update',:id=>@messagetemplate.id}) do |f| %>
+	
+	  <%= render(:partial=> "form", :locals=>{:f => f}) %>
+	
+	<div class="form-buttons">
+		<%= submit_tag("update MessageTemplate", :class =>'btn btn-warning') %> 
+</div>
+
+<% end %>
+</div>

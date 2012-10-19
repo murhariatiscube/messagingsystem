@@ -1,0 +1,20 @@
+
+<html>
+<body>
+
+<marquee behavior="alternate" direction="right" ><blink><h3 style="color:red;">This is a Message System</h3></blink></marquee>
+	
+
+			<% @page_title = ' Menu' -%>
+			<p><span class="label label-warning">&nbsp;&nbsp;&nbsp;Menu</span></p>
+
+<ul class="menu">
+		<p><span class="label label-warning"><%= link_to('Manage User Account', :controller => 'users',:action=>'list') %></span></p> 
+	<p><span class="label label-warning"><%= link_to('Manage Message Template', :controller => 'message_templates',:action=>'list') %></span></p> 
+	<p><span class="label label-warning"><%= link_to('Manage Messages', :controller => 'messages',:action=>'list') %></span></p> 
+<p><span class="label label-warning"><%= link_to('Logout', :action => 'logout') %></span></p> 
+	
+	
+</ul>
+</body>
+</html>
